@@ -42,7 +42,7 @@ namespace MatchGame
             if (matchesFound == 8)
             {
                 timer.Stop();
-                timeTextBlock.Text = timeTextBlock.Text + " - Play again?";
+                timeTextBlock.Text += " - Play again?";
             }
         }
 
@@ -67,6 +67,7 @@ namespace MatchGame
                 {
                     int index = random.Next(catsEmoji.Count);
                     string nextEmoji = catsEmoji[index];
+                    textBlock.Visibility = Visibility.Visible;
                     textBlock.Text = nextEmoji;
                     catsEmoji.RemoveAt(index);
                 }
@@ -99,6 +100,7 @@ namespace MatchGame
             {
                 lastTextBlockClicked.Visibility = Visibility.Visible;
                 findingMatch = false;
+                Console.Write("What a mess(\n");
             }
 
         }
@@ -107,6 +109,7 @@ namespace MatchGame
         {
             if (matchesFound == 8)
             {
+                Console.WriteLine("First circle - done!");
                 SetUpGame();
             }
         }
